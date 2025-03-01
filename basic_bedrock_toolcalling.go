@@ -120,8 +120,8 @@ func main() {
 			}
 
 			// Assume the model requested "get_time"
-			// toolRequest := toolUse.Value.Content[0]
-			if true {
+			fmt.Printf("Tool request: %v\n", *toolUse.Value.Content[0].(*types.ContentBlockMemberToolUse).Value.Name)
+			if *toolUse.Value.Content[0].(*types.ContentBlockMemberToolUse).Value.Name == "get_time" {
 				// Execute the function
 				currentTime := getTime()
 
